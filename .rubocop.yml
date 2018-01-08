@@ -1,0 +1,47 @@
+require: rubocop-rspec
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.4
+
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - Gemfile.lock
+
+Rails:
+  Enabled: true
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+Metrics/LineLength:
+  Max: 120
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Style/Documentation:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%': '()'
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '()'
+    '%w': '[]'
+    '%W': '[]'
