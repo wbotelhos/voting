@@ -195,12 +195,12 @@ end
 
 Now, when a resource is created, the cache will be generated for each related `category` as `scopeable`.
 
-# Toggle
+### Toggle
 
 The toggle functions works out of box, so if you vote up twice or vote twice down, the vote will be canceled.
 When you do that, the vote record is **not destroyed** instead, it receives zero on `negative` and `positive` column.
 
-# Alias
+### Alias
 
 You can to use alias to directly call `vote` with positive or negative data.
 
@@ -212,7 +212,7 @@ author.up   resource # +1
 author.down resource # -1
 ```
 
-### Options
+#### Options
 
 `down`: makes a negative vote;
 
