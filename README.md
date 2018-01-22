@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wbotelhos/voting.svg)](https://travis-ci.org/wbotelhos/voting)
 [![Gem Version](https://badge.fury.io/rb/voting.svg)](https://badge.fury.io/rb/voting)
+[![Maintainability](https://api.codeclimate.com/v1/badges/dcdf51e3093148c5ac6a/maintainability)](https://codeclimate.com/github/wbotelhos/voting/maintainability)
 [![LiberPay](https://img.shields.io/badge/donate-%3C3-brightgreen.svg)](https://liberapay.com/wbotelhos)
 
 A Binomial proportion confidence interval voting system with scope and cache enabled.
