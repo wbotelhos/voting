@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    voting (0.1.0)
+    voting (0.2.0)
       activerecord (>= 4.2, < 6)
 
 GEM

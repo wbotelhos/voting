@@ -116,6 +116,13 @@ resource = Comment.last
 author.voted? resource
 ```
 
+If you want to know if the vote was `positive` or `negative`, just pass a symbol about it:
+
+```ruby
+author.voted? resource, :negative
+author.voted? resource, :positive
+```
+
 ### votes
 
 You can retrieve all votes received by some resource:
