@@ -21,8 +21,12 @@ module Voting
         Vote.vote_for author: self, resource: resource, scopeable: scope
       end
 
-      def voted?(resource, scope: nil)
-        !vote_for(resource, scope: scope).nil?
+      def voted?(resource, value = nil, scope: nil)
+        query = { author: self, resource: resource, scopeable: scope }
+
+        query[value] = 1 unless value.nil?
+
+        Vote.exists? query
       end
 
       def votes(scope: nil)
