@@ -183,23 +183,6 @@ An author model still can be voted, but won't generate a Voting record with all 
 voting as: :author
 ```
 
-### Scoping
-
-If you need to warm up a record with scope, you need to setup the `scoping` relation.
-
-```ruby
-class Resource < ApplicationRecord
-  voting scoping: :categories
-end
-```
-
-Now, when a resource is created, the cache will be generated for each related `category` as `scopeable`.
-
-### Toggle
-
-The toggle functions works out of box, so if you vote up twice or vote twice down, the vote will be canceled.
-When you do that, the vote record is **not destroyed** instead, it receives zero on `negative` and `positive` column.
-
 ### Alias
 
 You can to use alias to directly call `vote` with positive or negative data.
@@ -217,6 +200,43 @@ author.down resource # -1
 `down`: makes a negative vote;
 
 `up`: makes a positive vote;
+
+### Toggle
+
+The toggle functions works out of box, so if you vote up twice or vote twice down, the vote will be canceled.
+When you do that, the vote record is **not destroyed** instead, it receives zero on `negative` and `positive` column.
+
+### Scope
+
+All methods accepts a `scope` param to be persisted with the vote or to be searched:
+
+```ruby
+category = Category.last
+
+author.down     resource,            scope: category
+author.up       resource,            scope: category
+author.vote     resource, 1,         scope: category
+author.vote_for resource,            scope: category
+author.voted    resource,            scope: category
+author.voted?   resource, :negative, scope: category
+author.voted?   resource, :positive, scope: category
+
+resource.votes  scope: category
+author  .voted  scope: category
+resource.votign scope: category
+```
+
+### Scoping
+
+If you need to warm up a record with scope, you need to setup the `scoping` relation.
+
+```ruby
+class Resource < ApplicationRecord
+  voting scoping: :categories
+end
+```
+
+Now, when a resource is created, the cache will be generated for each related `category` as `scopeable`.
 
 ### References
 
