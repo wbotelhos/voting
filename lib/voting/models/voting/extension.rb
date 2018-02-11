@@ -56,7 +56,7 @@ module Voting
 
     module ClassMethods
       def voting(as: nil, scoping: nil)
-        after_save -> { voting_warm_up scoping: scoping }, unless: -> { as == :author }
+        after_create -> { voting_warm_up scoping: scoping }, unless: -> { as == :author }
 
         has_many :voting_records,
           as:         :resource,

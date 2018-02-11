@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Voting::Extension, 'after_save' do
+RSpec.describe Voting::Extension, 'after_create' do
   context 'when record is author' do
     let!(:record) { build :author }
 
@@ -29,6 +29,16 @@ RSpec.describe Voting::Extension, 'after_save' do
 
       it 'warms up the cache' do
         expect(record).to receive(:voting_warm_up).with(scoping: nil)
+
+        record.save
+      end
+    end
+
+    context 'when update is made' do
+      let!(:record) { create :comment }
+
+      it 'does not warm up the cache' do
+        expect(record).not_to receive(:voting_warm_up)
 
         record.save
       end
