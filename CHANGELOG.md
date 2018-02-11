@@ -1,3 +1,9 @@
+## v0.4.0
+
+### Updates
+
+- Now is possible pass string on vote value.
+
 ## v0.3.0
 
 ### News
