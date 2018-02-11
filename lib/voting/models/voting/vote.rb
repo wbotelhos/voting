@@ -18,6 +18,12 @@ module Voting
       scope:          %i[author_type resource_id resource_type scopeable_id scopeable_type]
     }
 
+    def status
+      return 'positive' if positive == 1
+
+      negative == 1 ? 'negative' : 'none'
+    end
+
     def self.create(author:, resource:, scopeable: nil, value:)
       record    = find_or_initialize_by(author: author, resource: resource, scopeable: scopeable)
       attribute = value.positive? ? :positive : :negative

@@ -58,6 +58,19 @@ author_1.vote(resource, 1)  # +1 vote
 author_2.vote(resource, -1) # -1 vote
 ```
 
+### status
+
+This mehod will return the status of a `Voting::Vote` object as `positive`, `negative` or `none`.
+
+```ruby
+author   = Author.first
+resource = Comment.last
+
+author.vote(resource, 1).status # 'positive'
+author.vote(resource, -1)       # 'negative'
+author.vote(resource, -1)       # 'none'
+```
+
 ### voting
 
 A voted resource exposes a cached data about it state:
