@@ -1,3 +1,13 @@
+## v0.3.0
+
+### News
+
+- Added method `status` to return the status of some vote record.
+
+### Updates
+
+- The voting warm up registers is only made on creation to avoid overhead.
+
 ## v0.2.0
 
 ### News
