@@ -25,6 +25,7 @@ module Voting
     end
 
     def self.create(author:, resource:, scopeable: nil, value:)
+      value     = value.to_i
       record    = find_or_initialize_by(author: author, resource: resource, scopeable: scopeable)
       attribute = value.positive? ? :positive : :negative
       canceled  = record.persisted? && value.abs == record[attribute]

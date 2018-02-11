@@ -47,7 +47,7 @@ Now this model can vote or receive votes.
 
 ### vote
 
-You can vote on some resource:
+You can vote on some resource using integer or string as value:
 
 ```ruby
 author_1 = Author.first
