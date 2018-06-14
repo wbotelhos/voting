@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/wbotelhos/voting.svg)](https://travis-ci.org/wbotelhos/voting)
 [![Gem Version](https://badge.fury.io/rb/voting.svg)](https://badge.fury.io/rb/voting)
 [![Maintainability](https://api.codeclimate.com/v1/badges/dcdf51e3093148c5ac6a/maintainability)](https://codeclimate.com/github/wbotelhos/voting/maintainability)
-[![Support](https://img.shields.io/badge/donate-%3C3-brightgreen.svg)](https://liberapay.com/wbotelhos)
+[![Patreon](https://img.shields.io/badge/donate-%3C3-brightgreen.svg)](https://www.patreon.com/wbotelhos)
 
 A Binomial proportion confidence interval voting system with scope and cache enabled.
 
@@ -264,7 +264,3 @@ Now, when a resource is created, the cache will be generated for each related `c
 - [Jonathan Landy](http://efavdb.com/ranking-revisited)
 - [Wilson Score Interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval)
 - [How to Count Thumb-Ups and Thumb-Downs](http://www.dcs.bbk.ac.uk/~dell/publications/dellzhang_ictir2011.pdf)
-
-## Love it!
-
-Via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=X8HEP2878NDEG&item_name=voting) or [Support](https://liberapay.com/wbotelhos). Thanks! (:
