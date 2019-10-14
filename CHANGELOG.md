@@ -1,3 +1,10 @@
+## v0.5.0
+
+### Update
+
+- Support for Rails 6;
+- Support for Ruby 2.6.5.
+
 ## v0.4.0
 
 ### Updates
