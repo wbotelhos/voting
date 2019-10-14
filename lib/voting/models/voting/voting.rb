@@ -13,7 +13,7 @@ module Voting
 
     validates :resource_id, uniqueness: {
       case_sensitive: false,
-      scope:          %i[resource_type scopeable_id scopeable_type]
+      scope: %i[resource_type scopeable_id scopeable_type]
     }
 
     class << self

@@ -15,7 +15,7 @@ module Voting
 
     validates :author_id, uniqueness: {
       case_sensitive: false,
-      scope:          %i[author_type resource_id resource_type scopeable_id scopeable_type]
+      scope: %i[author_type resource_id resource_type scopeable_id scopeable_type]
     }
 
     def status

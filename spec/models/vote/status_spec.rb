@@ -7,7 +7,6 @@ RSpec.describe Voting::Vote, '.status' do
   let!(:resource) { create :comment }
 
   context 'with no scope' do
-
     it 'returns the status' do
       expect(author.up(resource).status).to   eq 'positive'
       expect(author.down(resource).status).to eq 'negative'

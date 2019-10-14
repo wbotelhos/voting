@@ -59,23 +59,23 @@ module Voting
         after_create -> { voting_warm_up scoping: scoping }, unless: -> { as == :author }
 
         has_many :voting_records,
-          as:         :resource,
-          class_name: '::Voting::Voting',
-          dependent:  :destroy
+                 as: :resource,
+                 class_name: '::Voting::Voting',
+                 dependent: :destroy
 
         has_many :votes_records,
-          as:         :resource,
-          class_name: '::Voting::Vote',
-          dependent:  :destroy
+                 as: :resource,
+                 class_name: '::Voting::Vote',
+                 dependent: :destroy
 
         has_many :voted_records,
-          as:         :author,
-          class_name: '::Voting::Vote',
-          dependent:  :destroy
+                 as: :author,
+                 class_name: '::Voting::Vote',
+                 dependent: :destroy
 
-        scope :order_by_voting, ->(column = :estimate, direction = :desc, scope: nil) {
+        scope :order_by_voting, lambda { |column = :estimate, direction = :desc, scope: nil|
           scope_values = {
-            scopeable_id:   scope&.id,
+            scopeable_id: scope&.id,
             scopeable_type: scope&.class&.base_class&.name
           }
 
